@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMBAG — Group Contribution Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">AMBAG</span>
+      <span class="tag">Academic Group Contribution Tracker</span>
+    </div>
+    <div class="who">
+      <label for="member">You are:</label>
+      <select id="member"></select>
+    </div>
+  </header>
+
+  <main>
+    <!-- Log a task commit -->
+    <section class="card" aria-labelledby="log-h">
+      <h2 id="log-h">Log a task commit</h2>
+      <form id="commit-form" class="grid">
+        <label>Task
+          <input id="task" type="text" placeholder="e.g. Drafted SWOT analysis" required />
+        </label>
+        <label>Minutes spent
+          <input id="minutes" type="number" min="1" placeholder="e.g. 45" required />
+        </label>
+        <label class="full">Evidence (link or short note)
+          <input id="evidence" type="text" placeholder="Google Doc link, screenshot note, etc." />
+        </label>
+        <div class="timer">
+          <span>Timer: <strong id="clock">00:00</strong></span>
+          <button type="button" id="timer-toggle" class="btn ghost">Start</button>
+          <button type="button" id="timer-use" class="btn ghost">Use time</button>
+        </div>
+        <button type="submit" class="btn">Add commit</button>
+      </form>
+    </section>
+
+    <!-- Commit log -->
+    <section class="card" aria-labelledby="feed-h">
+      <h2 id="feed-h">Task commits</h2>
+      <p class="muted" id="empty">No commits yet. Log your first task above.</p>
+      <ul id="feed" class="feed"></ul>
+    </section>
+
+    <!-- Contribution summary -->
+    <section class="card" aria-labelledby="sum-h">
+      <h2 id="sum-h">Contribution summary <span class="muted">(AI/Prof view — read only)</span></h2>
+      <table class="summary">
+        <thead><tr><th>Member</th><th>Commits</th><th>Confirmed</th><th>Total time</th></tr></thead>
+        <tbody id="summary"></tbody>
+      </table>
+      <p class="note">AMBAG makes each member's contribution visible and verifiable. AI only summarizes progress — it never grades.</p>
+    </section>
+  </main>
+
+  <footer class="foot">SYSANDE · Group 8 · AMBAG starter — Aaron, Chesca, Paolo, Marjie</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

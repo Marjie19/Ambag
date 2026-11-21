@@ -19,7 +19,8 @@ A lightweight, client-side prototype (no backend yet) that runs in any browser:
 
 Data is saved in the browser via `localStorage`, so the demo survives refreshes. This is a
 starting point for the core screens; the full build (accounts, shared database, AI summaries)
-is planned for the Dec 19–21 window.
+is the next phase. Note: the graded finals deliverable is the SRS paper (due Nov 28); this
+working system is the team's own extra.
 
 ## Run it
 
